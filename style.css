@@ -240,11 +240,37 @@ h2 { border-left: 5px solid var(--laranja-neon); padding-left: 15px; margin-bott
 .hexagon-container:hover { transform: scale(1.1); }
 .hexagon-container:hover span { opacity: 0; /* Esconde o texto no hover */ }
 
-.hex-js:hover .hexagon-inner { background: url('caminho/para/logo-node.png') center/cover no-repeat var(--bg-secundario); }
-.hex-java:hover .hexagon-inner { background: url('caminho/para/logo-java.png') center/cover no-repeat var(--bg-secundario); }
-.hex-py:hover .hexagon-inner { background: url('caminho/para/logo-python.png') center/cover no-repeat var(--bg-secundario); }
-.hex-sql:hover .hexagon-inner { background: url('caminho/para/logo-sql.png') center/cover no-repeat var(--bg-secundario); }
+/* Links oficiais do Wikimedia Commons para os ícones */
+/* Node.js */
+.hex-js:hover .hexagon-inner { 
+    background: url('https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg') center/60% no-repeat var(--bg-secundario); 
+}
 
+/* Java - Link direto via Devicon/Wikimedia */
+.hex-java:hover .hexagon-inner { 
+    background: url('https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg') center/60% no-repeat var(--bg-secundario); 
+}
+
+/* Python */
+.hex-py:hover .hexagon-inner { 
+    background: url('https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg') center/60% no-repeat var(--bg-secundario); 
+}
+
+/* SQL - Ícone de Banco de Dados */
+.hex-sql:hover .hexagon-inner { 
+    background: url('https://www.svgrepo.com/show/255832/sql.svg') center/60% no-repeat var(--bg-secundario); 
+}
+
+/* GitHub */
+.hex-git:hover .hexagon-inner { 
+    background: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg') center/60% no-repeat var(--bg-secundario); 
+    filter: invert(1); /* Inverte a cor para aparecer no fundo escuro se necessário */
+}
+
+/* LinkedIn */
+.hex-in:hover .hexagon-inner { 
+    background: url('https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg') center/60% no-repeat var(--bg-secundario); 
+}
 
 /* --- Footer Organizado --- */
 footer {
@@ -252,6 +278,12 @@ footer {
     border-top: 1px solid var(--glass-border);
     margin-top: 60px;
     padding: 40px 20px;
+}
+
+/* Garante que o link não tenha sublinhado e respeite o tamanho do hexágono */
+.hex-social-link {
+    text-decoration: none;
+    display: inline-block;
 }
 
 .footer-layout {
@@ -267,7 +299,21 @@ footer {
 .footer-esq p { margin: 5px 0; font-size: 1rem; color: var(--texto-principal); }
 .icon-wpp { color: #25D366; font-size: 1.2rem; } /* Verde WhatsApp */
 
-.footer-centro { display: flex; gap: 20px; }
+.footer-centro .hexagon-inner {
+    width: 92px;
+    height: 104px;
+}
+
+.footer-centro .hexagon-container {
+    width: 100px;
+    height: 112px;
+}
+
+.footer-centro .hexagon-inner {
+    width: 92px;
+    height: 104px;
+}
+
 .social-link {
     color: var(--texto-principal);
     text-decoration: none;
@@ -276,6 +322,20 @@ footer {
     transition: 0.3s;
 }
 .social-link:hover { color: var(--laranja-neon); text-decoration: underline; }
+
+/* Ícones do Rodapé (Garante que apareçam) */
+.hex-git:hover .hexagon-inner { 
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg');
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-color: #0f172a !important; /* Força um fundo escuro */
+    filter: invert(1); /* Torna a logo preta em branca */
+}
+
+.hex-in:hover .hexagon-inner { 
+    background: url('https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg') center/60% no-repeat var(--bg-secundario); 
+}
 
 .btn-contato { background: var(--laranja-neon); color: #fff; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
 .btn-contato:hover { background: var(--laranja-hover); transform: scale(1.05); }
