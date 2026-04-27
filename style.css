@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Aplicação da fonte Inter em todo o projeto */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-primario: #0f172a;
+    --bg-secundario: #1e293b;
+    --texto-principal: #e2e8f0;
+    --laranja-neon: #f97316;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    /* Transição mais elegante e lenta para o tema */
+    --transicao-suave: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Variáveis para o Tema Claro */
+[data-theme="light"] {
+    --bg-primario: #f8fafc;
+    --bg-secundario: #e2e8f0;
+    --texto-principal: #0f172a;
+    --glass-bg: rgba(15, 23, 42, 0.03);
+    --glass-border: rgba(15, 23, 42, 0.08);
+}
+
+body {
+    background-color: var(--bg-primario);
+    /* Mantive o seu padrão de triângulos */
+    background-image: 
+        linear-gradient(135deg, var(--bg-secundario) 25%, transparent 25%), 
+        linear-gradient(225deg, var(--bg-secundario) 25%, transparent 25%), 
+        linear-gradient(45deg, var(--bg-secundario) 25%, transparent 25%), 
+        linear-gradient(315deg, var(--bg-secundario) 25%, var(--bg-primario) 25%);
+    background-position: 40px 0, 40px 0, 0 0, 0 0;
+    background-size: 80px 80px;
+    color: var(--texto-principal);
+    transition: var(--transicao-suave);
+    line-height: 1.6; /* Melhora a leitura dos textos */
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.bio {
+    line-height: 1.8;
+    font-weight: 400;
+    color: var(--texto-principal);
+    opacity: 0.9;
+}
+
+/* Camada extra para suavizar o padrão e dar profundidade crescente */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--bg-primario));
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --- Navegação --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--laranja-neon);
+}
+
+.btn-theme {
+    background: none;
+    border: 1px solid var(--glass-border);
+    color: var(--texto-principal);
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-theme:hover {
+    background: var(--glass-bg);
+}
+
+.btn-fill {
+    background: var(--laranja-neon);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+
+.btn-fill:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+    background: #ea580c;
+}
+
+.btn-outline {
+    border: 2px solid var(--laranja-neon);
+    color: var(--laranja-neon) !important;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: rgba(249, 115, 22, 0.08);
+    transform: translateY(-2px);
+}
+
+/* --- Foto de Perfil (Placeholder) --- */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic-placeholder {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: var(--bg-secundario);
+    border: 3px dashed var(--laranja-neon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texto-mutado);
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.profile-pic-placeholder:hover {
+    border-style: solid;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+}
+
+header.glass-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    padding: 30px 20px 60px;
+    text-align: center;
+    border-bottom: 4px solid var(--laranja-neon);
+}
+
+header, section, footer, div, h1, h2, h3, p, a, span, .card-glass, .hexagon-inner {
+    transition: var(--transicao-suave);
+}
+
+header h1 { margin-bottom: 10px; font-size: 2.5rem; }
+header .subtitle { color: var(--laranja-neon); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+header .bio { max-width: 700px; margin: 20px auto 0; font-size: 1.1rem; }
+
+section { max-width: 1000px; margin: 50px auto; padding: 0 20px; scroll-margin-top: 50px; }
+h2 { border-left: 5px solid var(--laranja-neon); padding-left: 15px; margin-bottom: 40px; font-size: 2rem; }
+
+/* Projetos */
+.projeto-row { display: flex; gap: 30px; margin-bottom: 30px; align-items: center; }
+.projeto-img-container { flex: 1; min-width: 300px; }
+.projeto-info { flex: 2; }
+.projeto-info h3 { margin-top: 0; font-size: 1.5rem; }
+.projeto-actions { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; }
+
+.card-glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+    transition: 0.3s ease;
+}
+
+.img-placeholder {
+    width: 100%; height: 200px;
+    background: linear-gradient(135deg, var(--bg-secundario), var(--laranja-neon));
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.7); font-weight: bold;
+}
+
+.tags { margin: 15px 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.tag { background: rgba(249, 115, 22, 0.1); color: var(--laranja-neon); border: 1px solid var(--laranja-neon); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+
+/* --- Hexágonos e Efeitos de Hover --- */
+.hexagon-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+.hexagon-container {
+    width: 120px; height: 135px; background: var(--laranja-neon);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex; align-items: center; justify-content: center; transition: 0.3s ease;
+}
+
+.hexagon-inner {
+    width: 112px; height: 126px; background: var(--bg-secundario);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+.hexagon-inner span { transition: opacity 0.2s; color: var(--texto-principal); }
+
+/* Quando você tiver as imagens, basta substituir o "URL" nas classes abaixo */
+.hexagon-container:hover { transform: scale(1.1); }
+.hexagon-container:hover span { opacity: 0; /* Esconde o texto no hover */ }
+
+.hex-js:hover .hexagon-inner { background: url('caminho/para/logo-node.png') center/cover no-repeat var(--bg-secundario); }
+.hex-java:hover .hexagon-inner { background: url('caminho/para/logo-java.png') center/cover no-repeat var(--bg-secundario); }
+.hex-py:hover .hexagon-inner { background: url('caminho/para/logo-python.png') center/cover no-repeat var(--bg-secundario); }
+.hex-sql:hover .hexagon-inner { background: url('caminho/para/logo-sql.png') center/cover no-repeat var(--bg-secundario); }
+
+
+/* --- Footer Organizado --- */
+footer {
+    background: var(--glass-bg);
+    border-top: 1px solid var(--glass-border);
+    margin-top: 60px;
+    padding: 40px 20px;
+}
+
+.footer-layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para celular */
+    gap: 20px;
+}
+
+.footer-esq p { margin: 5px 0; font-size: 1rem; color: var(--texto-principal); }
+.icon-wpp { color: #25D366; font-size: 1.2rem; } /* Verde WhatsApp */
+
+.footer-centro { display: flex; gap: 20px; }
+.social-link {
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+.social-link:hover { color: var(--laranja-neon); text-decoration: underline; }
+
+.btn-contato { background: var(--laranja-neon); color: #fff; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+.btn-contato:hover { background: var(--laranja-hover); transform: scale(1.05); }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .projeto-row { flex-direction: column; }
+    .footer-layout { flex-direction: column; text-align: center; }
+    .nav-links { gap: 15px; font-size: 0.9rem; }
+}
+
+.fade-in { opacity: 0; transform: translateY(30px); transition: 0.6s ease-out; }
+.fade-in.show { opacity: 1; transform: translateY(0); }

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Gustavo Vitor</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="glass-header">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
+            <button id="theme-toggle" class="btn-theme" title="Alternar Modo Claro/Escuro">☀️</button>
+        </nav>
+
+        <div class="profile-container">
+            <div class="profile-pic-placeholder">
+                <span>[Sua Foto]</span>
+            </div>
+        </div>
+
+        <h1>Gustavo Vitor de Paula Souza</h1>
+        <p class="subtitle">Desenvolvedor Full Stack em Formação | Técnico em Informática</p>
+        <p class="bio">Atualmente no 3º ano do Ensino Médio Técnico com Curso em Técnico em Administração (ETEC)
+            e no 2º Semestre do Curso Técnico de Análise e Desenvolvimento de Sistemas (SENAI). Meu foco é resolver problemas através de arquitetura de sistemas,
+            desenvolvimento de APIs REST e estudo de governança na indústria de jogos.</p>
+    </header>
+
+    <section id="skills" class="fade-in">
+        <h2>Habilidades & Stacks</h2>
+        <div class="hexagon-grid">
+            <div class="hexagon-container hex-js">
+                <div class="hexagon-inner"><span>Node.js</span></div>
+            </div>
+            <div class="hexagon-container hex-java">
+                <div class="hexagon-inner"><span>Java</span></div>
+            </div>
+            <div class="hexagon-container hex-py">
+                <div class="hexagon-inner"><span>Python</span></div>
+            </div>
+            <div class="hexagon-container hex-sql">
+                <div class="hexagon-inner"><span>SQL</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="fade-in">
+        <h2>Projetos em Destaque</h2>
+        
+        <div class="projeto-row card-glass">
+            <div class="projeto-img-container">
+                <div class="img-placeholder">API Preview</div>
+            </div>
+            <div class="projeto-info">
+                <h3>API REST: Estados e Cidades Brasileiras</h3>
+                <p>Infraestrutura backend robusta para consulta de dados geográficos brasileiros com deploy automatizado.</p>
+                <div class="tags">
+                    <span class="tag">Node.js</span> <span class="tag">Express</span> <span class="tag">Render</span>
+                </div>
+                <div class="projeto-actions">
+                    <a href="#" class="btn-fill" target="_blank">Ver Projeto Live</a>
+                    <a href="#" class="btn-outline" target="_blank">Repositório GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="projeto-row card-glass">
+            <div class="projeto-img-container">
+                <div class="img-placeholder">TCC Preview</div>
+            </div>
+            <div class="projeto-info">
+                <h3>Análise Administrativa: Governança no Mercado de Games</h3>
+                <p>Estudo focado nas estratégias de mercado da Sony, Nintendo e Microsoft, abordando modelos de assinatura e gestão na indústria.</p>
+                <div class="tags">
+                    <span class="tag">Pesquisa de Mercado</span> <span class="tag">Gestão</span> <span class="tag">Games</span>
+                </div>
+                <div class="projeto-actions">
+                    <a href="#" class="btn-fill" target="_blank">Ler Artigo</a>
+                    <a href="#" class="btn-outline" target="_blank">Ver Slides</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="projeto-row card-glass">
+            <div class="projeto-img-container">
+                <div class="img-placeholder">Redes Preview</div>
+            </div>
+            <div class="projeto-info">
+                <h3>Configuração de Infraestrutura de Redes</h3>
+                <p>Simulação de redes locais e remotas abordando endereçamento IP e protocolos de segurança em ambientes corporativos.</p>
+                <div class="tags">
+                    <span class="tag">Cisco Packet Tracer</span> <span class="tag">Networking</span>
+                </div>
+                <div class="projeto-actions">
+                    <a href="#" class="btn-fill" target="_blank">Ver Topologia</a>
+                    <a href="#" class="btn-outline" target="_blank">Documentação</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="projeto-row card-glass">
+            <div class="projeto-img-container">
+                <div class="img-placeholder">TCC Preview</div>
+            </div>
+            <div class="projeto-info">
+                <h3>Análise Administrativa: Governança no Mercado de Games</h3>
+                <p>Projeto de conclusão focado no estudo aprofundado das estratégias de mercado da Sony, Nintendo e Microsoft. Abordagem de modelos de assinatura e métodos de governança na indústria de entretenimento digital.</p>
+                <div class="tags">
+                    <span class="tag">Pesquisa de Mercado</span>
+                    <span class="tag">Análise de Dados</span>
+                    <span class="tag">Gestão</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="projeto-row card-glass">
+            <div class="projeto-img-container">
+                <div class="img-placeholder">Redes Preview</div>
+            </div>
+            <div class="projeto-info">
+                <h3>Configuração de Infraestrutura de Redes</h3>
+                <p>Simulação e estruturação de redes locais e remotas abordando o problema desde o endereçamento IP até protocolos de comunicação e segurança em ambientes corporativos.</p>
+                <div class="tags">
+                    <span class="tag">Cisco Packet Tracer</span>
+                    <span class="tag">Networking</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contatos">
+        <div class="footer-layout">
+            <div class="footer-esq">
+                <p><span class="icon-wpp">💬</span> (11) 9XXXX-XXXX</p>
+                <p>✉️ seu.email@provedor.com</p>
+            </div>
+            
+            <div class="footer-centro">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">GitHub</a>
+            </div>
+            
+            <div class="footer-dir">
+                <button id="btn-alerta" class="btn-contato">Agendar Reunião</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
